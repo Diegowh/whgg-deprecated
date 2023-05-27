@@ -8,10 +8,10 @@ def home(request):
     return render(request, 'summoner_dashboard/main_page.html')
 
 
-def summoner_info(request, region, summoner_name):
+def summoner_info(request, summoner_name):
     api_key = settings.API_KEY
     
-    summoner = SummonerData(summoner_name, api_key, region)
+    summoner = SummonerData(summoner_name, api_key)
     summoner_data = summoner.league_data()
     recent_matches_data = summoner.recent_matches_data()
     top_champs_data = summoner.top_champions_data()

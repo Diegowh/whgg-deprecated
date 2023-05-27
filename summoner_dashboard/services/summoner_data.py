@@ -6,7 +6,7 @@ from .summoner_info import SummonerInfo
 
 
 
-REGION_DEFAULT = "EUW1"
+REGION_DEFAULT = "euw1"
 BASE_URL_TEMPLATE = "https://{region}.api.riotgames.com/lol/"
 
 
