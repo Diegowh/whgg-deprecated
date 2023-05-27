@@ -14,7 +14,6 @@ class SummonerData(SummonerInfo, DatabaseHandler, APIHandler, RankedData, MatchS
         
         self._summoner_info = None
         self.id = self.summoner_id()
-        # self.cache = cachetools.TTLCache(maxsize=100, ttl=30 * 60)
         
         if self._summoner_data_from_db() is not None:
             self.puuid = self._summoner_data_from_db()["summoner_puuid"]

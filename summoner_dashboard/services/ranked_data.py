@@ -27,7 +27,7 @@ class RankedData:
             "summoner_level": self.summoner_level(),
         }
         
-        # Itero sobre las 2 entradas (soloq y flex) porque los retrasados de riot las devuelven en orden aleatorio en cada solicitud
+        # Itero sobre las 2 entradas (soloq y flex) porque cada solicitud devuelve la info de las colas en orden aleatorio.
         for entry in league_entries:
             win_rate = int(round((entry['wins'] / (entry['wins'] + entry['losses'])) * 100))
             if entry["queueType"] == "RANKED_SOLO_5x5":
