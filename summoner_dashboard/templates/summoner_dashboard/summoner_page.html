@@ -70,7 +70,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('summoner.summoner_info', region=region, summoner_name=summoner_name) }}">
+        <a class="nav-link" href="{% url 'summoner.summoner_info' region=region summoner_name=summoner_name %}">
           
           <span>Home</span>
         </a>
@@ -123,7 +123,7 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="/static/img/profileIcon/{{ summoner_data.profile_icon_id }}.png" alt="" class="img-icon">
+                      <img src="{% static 'img/profileIcon/'|add:summoner_data.profile_icon_id|add:'.png' %}" alt="" class="img-icon">
                     </div>
                     <div class="ps-3">
                       <h6>{{ summoner_name }}</h6>
@@ -132,7 +132,7 @@
                       document.addEventListener('DOMContentLoaded', function () {
                         const updateButton = document.getElementById('update-button');
 
-                        const summonerInfoUrl = "{{ url_for('summoner.summoner_info', region=region, summoner_name=summoner_name) }}";
+                        const summonerInfoUrl = "{% url 'summoner.summoner_info' region=region summoner_name=summoner_name %}";
 
                         updateButton.addEventListener('click', function (event) {
                           event.preventDefault();
@@ -160,7 +160,8 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="/static/img/{{ summoner_data.soloq.rank.split()[0] }}.webp" alt="master" class="img-icon">
+                      <img src="{% static 'img/'|add:summoner_data.soloq.rank.split.0|add:'.webp' %}" alt="master" class="img-icon">
+
                     </div>
                     <div class="ps-3">
                       <h6>{{ summoner_data.soloq.rank }}</h6>
@@ -181,7 +182,7 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <img src="/static/img/{{ summoner_data.flex.rank.split()[0] }}.webp" alt="master" class="img-icon">
+                      <img src="{% static 'img/'|add:summoner_data.flex.rank.split.0|add:'.webp' %}" alt="master" class="img-icon">
                     </div>
                     <div class="ps-3">
                       <h6>{{ summoner_data.flex.rank }}</h6>
@@ -207,22 +208,21 @@
                   <div class="card">
                     <div class="card-header">
                       <span class="game-type">{{ match.game_type }}</span>
-                      <img src="/static/img/champion/{{ match.champion_name }}.png" alt="Champion icon" class="champ-icon">
+                      <img src="{% static 'img/champion/'|add:match.champion_name|add:'.png' %}" alt="Champion icon" class="champ-icon">
                       <div class="game-runes">
-                        <img src="/static/img/spells/{{ match.summoner_spell_ids[0] }}.png" alt="spell-1" class="rune-icon">
-                        <img src="/static/img/spells/{{ match.summoner_spell_ids[1] }}.png" alt="spell-2" class="rune-icon">
+                        <img src="{% static 'img/spells/'|add:match.summoner_spell_ids.0|add:'.png' %}" alt="spell-1" class="rune-icon">
+                        <img src="{% static 'img/spells/'|add:match.summoner_spell_ids.1|add:'.png' %}" alt="spell-2" class="rune-icon">
                       </div>
                       <div class="game-score">
                         <span class="kda">{{ match.kills }} / {{ match.deaths }} / {{ match.assists }}</span>
-                        <span class="kda-ratio">{{ ((match.kills + match.assists) / match.deaths if match.deaths > 0 else match.kills + match.assists)|round(2) }}:1 KDA</span>
-
+                        <span class="kda-ratio">{{ ((match.kills + match.assists) / match.deaths if match.deaths > 0 else match.kills + match.assists)|floatformat:2 }}:1 KDA</span>
                         <span class="cs cs-center">{{ match.cs }} CS</span>
                       </div>
                       <div class="game-items">
                         {% for item_id in match.item_ids %}
                           <div class="item-icon">
                             {% if item_id != 0 %}
-                              <img src="/static/img/item/{{ item_id }}.png" alt="" class="item-icon">
+                              <img src="{% static 'img/item/'|add:item_id|add:'.png' %}" alt="" class="item-icon">
                             {% endif %}
                           </div>
                         {% endfor %}
@@ -231,32 +231,32 @@
                     </div>
                     <div class="card-header justify-content-center">
                       <div class="participant-column">
-                        {% for champ_name in match.participant_champion_names[:5] %}
+                        {% for champ_name in match.participant_champion_names|slice:":5" %}
                         <div class="participant-icon">
-                          <img src="/static/img/champion/{{ champ_name }}.png" alt="{{ champ_name }}" class="participant-icon">
+                          <img src="{% static 'img/champion/'|add:champ_name|add:'.png' %}" alt="{{ champ_name }}" class="participant-icon">
                         </div>
                         {% endfor %}
                       </div>
                       <div class="participant-column">
-                        {% for participant_name in match.participant_summoner_names[:5] %}
+                        {% for participant_name in match.participant_summoner_names|slice:":5" %}
                         <span class="participant-name">{{ participant_name }}</span>
                         {% endfor %}
                       </div>
                       <div class="participant-column pl-100">
-                        {% for champ_name in match.participant_champion_names[5:] %}
+                        {% for champ_name in match.participant_champion_names|slice:"5:" %}
                         <div class="participant-icon">
-                          <img src="/static/img/champion/{{ champ_name }}.png" alt="{{ champ_name }}" class="participant-icon">
+                          <img src="{% static 'img/champion/'|add:champ_name|add:'.png' %}" alt="{{ champ_name }}" class="participant-icon">
                         </div>
                         {% endfor %}
                       </div>
                       <div class="participant-column">
-                        {% for participant_name in match.participant_summoner_names[5:] %}
+                        {% for participant_name in match.participant_summoner_names|slice:"5:" %}
                         <span class="participant-name">{{ participant_name }}</span>
                         {% endfor %}
                       </div>
                     </div>
                   </div>
-                  {% endfor %}
+                {% endfor %}
                 </div>
               </div>
             </div><!-- End Recent Games -->
@@ -360,7 +360,7 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col">
-                        <img class="champ-img" src="/static/img/champion/{{ champion.champion_name }}.png" alt="">
+                        <img class="champ-img" src="{% static 'img/champion/'|add:champion.champion_name|add:'.png' %}" alt="">
                       </div>
                       <div class="col">
                         <span class="champ-name">{{ champion.champion_name }}</span>
@@ -394,10 +394,6 @@
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer>
@@ -406,17 +402,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/vendor/chart.js/chart.umd.js"></script>
-  <script src="/static/vendor/echarts/echarts.min.js"></script>
-  <script src="/static/vendor/quill/quill.min.js"></script>
-  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
-  <script src="/static/vendor/php-email-form/validate.js"></script>
+<script src="{% static 'vendor/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/chart.js/chart.umd.js' %}"></script>
+<script src="{% static 'vendor/echarts/echarts.min.js' %}"></script>
+<script src="{% static 'vendor/quill/quill.min.js' %}"></script>
+<script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'vendor/tinymce/tinymce.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="/static/js/main.js"></script>
+<!-- Template Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
 
 </body>
 
