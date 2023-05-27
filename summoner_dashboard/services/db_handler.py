@@ -2,7 +2,7 @@ from datetime import timedelta
 import logging
 from django.utils import timezone
 from django.core.exceptions import ObjectDoesNotExist
-from ..models import  SummonerModel, MatchModel
+from ..models import SummonerModel, MatchModel
 
 
 logger = logging.getLogger(__name__)

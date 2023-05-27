@@ -1,131 +1,102 @@
-from .db_models import db, ChampionStatsModel, MatchModel
-from sqlalchemy import cast, Numeric, Float
+from ..models import ChampionStatsModel, MatchModel
+from django.db.models import F
+from typing import List
+from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Count, Sum, Avg, F, FloatField, ExpressionWrapper
+from django.db.models import OuterRef, Exists
 
 
 RECENT_MATCHES_LIMIT = 10
-
+TOP_CHAMPIONS_LIMIT = 5
 
 class MatchStats:
-    def recent_matches_data(self) -> list:
+    def recent_matches_data(self) -> List[dict]:
         matches_data = self._matches_data_from_db()
         self.update_champion_stats()
 
+        if not matches_data:
+            return []
+        
         def match_id_key(match_data):
-            return match_data["match_id"]
+            return match_data.match_id
 
         matches_data.sort(key=match_id_key, reverse=True)
         recent_matches_data = matches_data[:RECENT_MATCHES_LIMIT]
 
         return recent_matches_data
     
-    def calculate_kda(self, kills: int, deaths: int, assists: int) -> float:
-        kda = (kills + assists) / (deaths if deaths != 0 else 1)
-        return round(kda, 2)
-
-    def calculate_average(self, value: int, total_games: int) -> float:
-        return round(value / total_games, 1)
     
     def update_champion_stats(self):
-        # Crea una tabla temporal con los datos agregados de matches
-
-        temp_stats = db.session.query(
-            MatchModel.summoner_puuid,
-            MatchModel.champion_name,
-            db.func.count().label("matches_played"),
-            db.func.sum(MatchModel.win).label("wins"),
-            (db.func.count() - db.func.sum(MatchModel.win)).label("losses"),
-            (db.func.round(cast(db.func.sum(MatchModel.win) * 100.0, Numeric) / db.func.count())).label("wr"),
-            (db.func.round(cast(db.func.sum(MatchModel.kills) + db.func.sum(MatchModel.assists), Numeric) / cast(db.func.sum(MatchModel.deaths) + 0.001, Numeric), 2)).label("kda"),
-            (db.func.round(cast(db.func.sum(MatchModel.kills) * 1.0, Numeric) / db.func.count(), 1)).label("kills"),
-            (db.func.round(cast(db.func.sum(MatchModel.deaths) * 1.0, Numeric) / db.func.count(), 1)).label("deaths"),
-            (db.func.round(cast(db.func.sum(MatchModel.assists) * 1.0, Numeric) / db.func.count(), 1)).label("assists"),
-            (db.func.round(cast(db.func.sum(MatchModel.cs) * 1.0, Numeric) / db.func.count())).label("cs")
-        ).filter(MatchModel.queue_id.in_([420, 440])).group_by(MatchModel.summoner_puuid, MatchModel.champion_name).subquery()
-
-        # Insertar los registros de la tabla temporal en champion_stats
-        insert_stat = ChampionStatsModel.__table__.insert().from_select(
-            [
-                ChampionStatsModel.summoner_puuid,
-                ChampionStatsModel.champion_name,
-                ChampionStatsModel.matches_played,
-                ChampionStatsModel.wins,
-                ChampionStatsModel.losses,
-                ChampionStatsModel.wr,
-                ChampionStatsModel.kda,
-                ChampionStatsModel.kills,
-                ChampionStatsModel.deaths,
-                ChampionStatsModel.assists,
-                ChampionStatsModel.cs,
-            ],
-            temp_stats.select().where(
-                db.not_(
-                    db.session.query(ChampionStatsModel).filter(
-                        ChampionStatsModel.summoner_puuid == temp_stats.c.summoner_puuid,
-                        ChampionStatsModel.champion_name == temp_stats.c.champion_name
-                    ).exists()
-                )
-            )
-        )
-
-        db.session.execute(insert_stat)
-        db.session.commit()
-        
-
-        
-    def top_champions_data(self, top=5):
-        top_champions_query = db.session.query(
-            ChampionStatsModel.champion_name,
-            ChampionStatsModel.matches_played,
-            ChampionStatsModel.wr,
-            ChampionStatsModel.kda,
-            ChampionStatsModel.kills,
-            ChampionStatsModel.deaths,
-            ChampionStatsModel.assists,
-            ChampionStatsModel.cs
+        matches = MatchModel.objects.values(
+            'summoner',
+            'champion_name'
         ).filter(
-            ChampionStatsModel.summoner_puuid == self.puuid
-        ).order_by(
-            ChampionStatsModel.matches_played.desc(),
-            ChampionStatsModel.wr.desc(),
-            ChampionStatsModel.kda.desc()
-        ).limit(top)
-
-        top_champions_list = top_champions_query.all()
-
-        top_champions = []
-        for champion in top_champions_list:
-            champion_dict = {
-                "champion_name": champion.champion_name,
-                "matches_played": champion.matches_played,
-                "wr": champion.wr,
-                "kda": champion.kda,
-                "kills": champion.kills,
-                "deaths": champion.deaths,
-                "assists": champion.assists,
-                "cs": champion.cs,
+            queue_id__in= [420, 440] # Filtro para obtener solo los datos de soloq y flex
+        ).annotate(
+            matches_played= Count('match_id'),
+            wins= Sum('win'),
+            losses= ExpressionWrapper(Count('match_id') - Sum('win'), output_field=FloatField()),
+            wr= ExpressionWrapper(Sum('win') * 100.0 / Count('match_id'), output_field=FloatField()),
+            kda= ExpressionWrapper((Sum('kills') + Sum('assists')) / (Sum('deaths') + 0.001), output_field=FloatField()),
+            kills= Avg('kills'),
+            deaths= Avg('deaths'),
+            assists= Avg('assists'),
+            cs= Avg('cs')
+        )
+        
+        for match in matches:
+            defaults = {
+                'matches_played': match['matches_played'],
+                'wins': match['wins'],
+                'losses': match['losses'],
+                'wr': match['wr'],
+                'kda': match['kda'],
+                'kills': match['kills'],
+                'deaths': match['deaths'],
+                'assists': match['assists'],
+                'cs': match['cs']
             }
-            top_champions.append(champion_dict)
-
-        return top_champions
+            ChampionStatsModel.objects.update_or_create(
+                summoner_id= match['summoner'],
+                champion_name= match['champion_name'],
+                defaults= defaults
+            )
+        
+    def top_champions_data(self, top=TOP_CHAMPIONS_LIMIT):
+        top_champions = ChampionStatsModel.objects.filter(
+            summoner_id= self.puuid
+        ).order_by(
+            F('matches_played').desc(),
+            F('wr').desc(),
+            F('kda').desc(),
+        )[:top]
+        
+        # Convierto a lista directamente los values de top_champions
+        top_champions_list = list(top_champions.values(
+            "champion_name",
+            "matches_played",
+            "wr",
+            "kda",
+            "kills",
+            "deaths",
+            "assists",
+            "cs"
+        ))
+        
+        return top_champions_list
         
     def role_data(self) -> dict:
-        role_data_query = db.session.query(
-            MatchModel.team_position
-        ).filter(
-            MatchModel.summoner_puuid == self.puuid
-        )
-
-        role_data = role_data_query.all()
-        role_counts = {
-            "TOP": 0,
-            "JUNGLE": 0,
-            "MIDDLE": 0,
-            "BOTTOM": 0,
-            "UTILITY": 0,
-        }
-        for role in role_data:
-            role = role[0]
-            if role in role_counts:
-                role_counts[role] += 1
-
+        roles = ["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"]
+        
+        role_counts = {role: 0 for role in roles}
+        
+        role_data = MatchModel.objects.values('team_position').filter(summoner__summoner_puuid=self.puuid)
+        
+        # Cuento la frecuencia de cada rol
+        role_frequencies = role_data.annotate(count=Count('team_position')).values('team_position', 'count')
+        
+        # Actualizo el diccionario de role_counts
+        for role in role_frequencies:
+            role_counts[role['team_position']] = role['count']
+                
         return role_counts
