@@ -63,7 +63,7 @@ class RankedData:
         else:
             
             data = self.fetch_summoner_ranks()
-            self.save_or_update_summoner_to_db(data)
+            self.handle_summoner_data(data)
             
             return data
     
