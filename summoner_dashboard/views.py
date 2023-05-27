@@ -5,7 +5,7 @@ import os
 from django.conf import settings
 
 def home(request):
-    return render(request, 'main_page.html')
+    return render(request, 'summoner_dashboard/main_page.html')
 
 
 def summoner_info(request, region, summoner_name):
@@ -94,4 +94,4 @@ def summoner_info(request, region, summoner_name):
     }
     
     
-    return render(request, 'summoner_page.html', summoner_profile)
+    return render(request, 'summoner_dashboard/summoner_page.html', summoner_profile)

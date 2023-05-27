@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>wh.gg</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'summoner_dashboard/img/wh.ico' %}" rel="icon">
+  <link href="{% static 'summoner_dashboard/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'summoner_dashboard/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'summoner_dashboard/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'summoner_dashboard/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="" class="logo d-flex align-items-center">
+        <!-- <img src="/static/img/test-logo.png" alt=""> -->
+        <span class="d-none d-lg-block">wh.gg</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      
+      <div class="search-bar">
+        <form id="search-form" class="search-form d-flex align-items-center" method="GET" action="#">
+          <input type="text" name="summoner_name" placeholder="Search" title="Enter summoner name">
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div><!-- End Logo -->
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('summoner.summoner_info', region=region, summoner_name=summoner_name) }}">
+          
+          <span>Home</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          
+          <span>Tier List</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          
+          <span>Champions</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          
+          <span>Leaderboards</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-8">
+          <div class="row">
+            
+            <!-- Summoner Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                
+
+                <div class="card-body">
+                  <h5 class="card-title"> | Profile</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="/static/img/profileIcon/{{ summoner_data.profile_icon_id }}.png" alt="" class="img-icon">
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{ summoner_name }}</h6>
+                      <button class="update-button" id="update-button">Update</button>
+                      <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+                        const updateButton = document.getElementById('update-button');
+
+                        const summonerInfoUrl = "{{ url_for('summoner.summoner_info', region=region, summoner_name=summoner_name) }}";
+
+                        updateButton.addEventListener('click', function (event) {
+                          event.preventDefault();
+                          
+                          // Redirige a la URL actual con la región y el nombre del invocador
+                          window.location.href = summonerInfoUrl;
+                        });
+                      });
+                      </script>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Summoner Card -->
+            <!-- Ranked Solo Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+
+                <div class="card-body">
+                  <h5 class="card-title"> | Ranked Solo</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="/static/img/{{ summoner_data.soloq.rank.split()[0] }}.webp" alt="master" class="img-icon">
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{ summoner_data.soloq.rank }}</h6>
+                      <span class="text-success small pt-1 fw-bold">{{ summoner_data.soloq.lp }}</span> <span class="text-muted small pt-2 ps-1">LP</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Ranked Solo Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+                <div class="card-body">
+                  <h5 class="card-title"> | Ranked Flex </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <img src="/static/img/{{ summoner_data.flex.rank.split()[0] }}.webp" alt="master" class="img-icon">
+                    </div>
+                    <div class="ps-3">
+                      <h6>{{ summoner_data.flex.rank }}</h6>
+                      <span class="text-success small pt-1 fw-bold">{{ summoner_data.flex.lp }}</span> <span class="text-muted small pt-2 ps-1">LP</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+
+            <!-- Recent Games -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="card-body pr-25 pl-25">
+                  <h5 class="card-title center-text"> | Recent Games</h5>
+
+                  <!-- Cards -->
+                  {% for match in recent_matches %}
+                  <div class="card">
+                    <div class="card-header">
+                      <span class="game-type">{{ match.game_type }}</span>
+                      <img src="/static/img/champion/{{ match.champion_name }}.png" alt="Champion icon" class="champ-icon">
+                      <div class="game-runes">
+                        <img src="/static/img/spells/{{ match.summoner_spell_ids[0] }}.png" alt="spell-1" class="rune-icon">
+                        <img src="/static/img/spells/{{ match.summoner_spell_ids[1] }}.png" alt="spell-2" class="rune-icon">
+                      </div>
+                      <div class="game-score">
+                        <span class="kda">{{ match.kills }} / {{ match.deaths }} / {{ match.assists }}</span>
+                        <span class="kda-ratio">{{ ((match.kills + match.assists) / match.deaths if match.deaths > 0 else match.kills + match.assists)|round(2) }}:1 KDA</span>
+
+                        <span class="cs cs-center">{{ match.cs }} CS</span>
+                      </div>
+                      <div class="game-items">
+                        {% for item_id in match.item_ids %}
+                          <div class="item-icon">
+                            {% if item_id != 0 %}
+                              <img src="/static/img/item/{{ item_id }}.png" alt="" class="item-icon">
+                            {% endif %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                      <span class="game-result{% if not match.win %} defeat{% endif %}">{{ 'Victory' if match.win else 'Defeat' }}</span>
+                    </div>
+                    <div class="card-header justify-content-center">
+                      <div class="participant-column">
+                        {% for champ_name in match.participant_champion_names[:5] %}
+                        <div class="participant-icon">
+                          <img src="/static/img/champion/{{ champ_name }}.png" alt="{{ champ_name }}" class="participant-icon">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="participant-column">
+                        {% for participant_name in match.participant_summoner_names[:5] %}
+                        <span class="participant-name">{{ participant_name }}</span>
+                        {% endfor %}
+                      </div>
+                      <div class="participant-column pl-100">
+                        {% for champ_name in match.participant_champion_names[5:] %}
+                        <div class="participant-icon">
+                          <img src="/static/img/champion/{{ champ_name }}.png" alt="{{ champ_name }}" class="participant-icon">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="participant-column">
+                        {% for participant_name in match.participant_summoner_names[5:] %}
+                        <span class="participant-name">{{ participant_name }}</span>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div><!-- End Recent Games -->
+
+          </div>
+        </div><!-- End Left side columns -->
+
+        <!-- Right side columns -->
+        <div class="col-lg-4">
+
+          <!-- Roles chart -->
+          <div class="card">
+            <div class="card-body pb-2">
+              <h5 class="card-title"> | Roles</h5>
+
+              <div style="display: none;">
+                <span id="top-count">{{ role_data['TOP'] }}</span>
+                <span id="jungle-count">{{ role_data['JUNGLE'] }}</span>
+                <span id="mid-count">{{ role_data['MIDDLE'] }}</span>
+                <span id="bottom-count">{{ role_data['BOTTOM'] }}</span>
+                <span id="support-count">{{ role_data['UTILITY'] }}</span>
+            </div>
+            <div id="trafficChart" style="min-height: 150px;" class="echart"></div>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  let role_counts = {
+                      'Top': parseInt(document.getElementById("top-count").textContent, 10),
+                      'Jungle': parseInt(document.getElementById("jungle-count").textContent, 10),
+                      'Mid': parseInt(document.getElementById("mid-count").textContent, 10),
+                      'Bottom': parseInt(document.getElementById("bottom-count").textContent, 10),
+                      'Support': parseInt(document.getElementById("support-count").textContent, 10)
+                  };
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      orient: 'vertical',
+                      left: '0',
+                      top: 'middle',
+                      itemWidth: 30,
+                      textStyle: {
+                        fontSize: 10
+                      }
+                    },
+                    series: [{
+                      name: '',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      center: ['65%', '50%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                          value: role_counts["Top"],
+                          name: 'Top'
+                        },
+                        {
+                          value: role_counts["Jungle"],
+                          name: 'Jungle'
+                        },
+                        {
+                          value: role_counts["Mid"],
+                          name: 'Mid'
+                        },
+                        {
+                          value: role_counts["Bottom"],
+                          name: 'Bottom'
+                        },
+                        {
+                          value: role_counts["Support"],
+                          name: 'Support'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Roles chart-->
+          <!-- Champion Stats -->
+          <div class="card">
+            <div class="card-body pb-0">
+              <h5 class="card-title "> | Champion Stats</h5>
+              {% if champions_played %}
+                {% for champion in champions_played %}
+                  <hr>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <img class="champ-img" src="/static/img/champion/{{ champion.champion_name }}.png" alt="">
+                      </div>
+                      <div class="col">
+                        <span class="champ-name">{{ champion.champion_name }}</span>
+                      </div>
+                      <div class="col stats-wrapper">
+                        <span class="kda1">{{ champion.kda }} KDA</span>
+                        <span class="kda-ratio">{{ champion.kills }} {{ champion.deaths }} {{ champion.assists }}</span>
+                      </div>
+                      <div class="col stats-wrapper">
+                        <span class="win-rate">{{ champion.wr }}%</span>
+                        <span class="games-played">{{ champion.games_played }} games</span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+                <hr>
+              {% endif %}
+            </div>
+          </div><!-- End Champion Stats-->
+
+        </div><!-- End Right side columns -->
+        
+      </div>
+    </section>
+    
+  </main><!-- End #main -->
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer>
+  </<!-- End Footer -->
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/vendor/quill/quill.min.js"></script>
+  <script src="/static/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>
