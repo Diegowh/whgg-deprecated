@@ -15,10 +15,12 @@ class SummonerData(SummonerInfo, DatabaseHandler, APIHandler, RankedData, MatchS
         self._summoner_info = None
         self.id = self.summoner_id()
         
-        if self._summoner_data_from_db() is not None:
-            self.puuid = self._summoner_data_from_db()["summoner_puuid"]
-            self.icon_id = self._summoner_data_from_db()["profile_icon_id"]
-            self.level = self._summoner_data_from_db()["summoner_level"]
+        summoner_data = self._summoner_data_from_db()
+        
+        if summoner_data is not None:
+            self.puuid = summoner_data["summoner_puuid"]
+            self.icon_id = summoner_data["profile_icon_id"]
+            self.level = summoner_data["summoner_level"]
         else:
             self.puuid = self.summoner_puuid()
             self.icon_id = self.summoner_icon_id()
