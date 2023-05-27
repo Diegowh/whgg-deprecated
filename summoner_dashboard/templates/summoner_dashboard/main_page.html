@@ -50,11 +50,18 @@
       
     </div><!-- End Logo -->
     <div class="search-bar">
-      <form id="search-form" class="search-form d-flex align-items-center" method="GET" action="#">
-        <input type="text" name="summoner_name" placeholder="Search" title="Enter summoner name">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      <form id="search-form" class="search-form d-flex align-items-center" onsubmit="event.preventDefault(); redirectToSummonerInfo();">
+          <input type="text" id="summoner-name-input" placeholder="Search" title="Enter summoner name">
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
-    </div>
+  </div>
+  
+  <script>
+  function redirectToSummonerInfo() {
+      var summonerName = document.getElementById('summoner-name-input').value;
+      window.location.href = "/summoners/euw1/" + summonerName;
+  }
+  </script>
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->

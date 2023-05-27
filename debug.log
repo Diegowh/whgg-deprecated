@@ -311,3 +311,133 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'summoner_info' with keyword arguments '{'region': '', 'summoner_name': ''}' not found. 1 pattern(s) tried: ['summoners/(?P<region>[^/]+)/(?P<summoner_name>[^/]+)\\Z']
 Watching for file changes with StatReloader
+Not Found: /summoner/euw1/wallhack
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 14, in summoner_info
+    summoner = SummonerData(summoner_name, api_key, region)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\summoner_data.py", line 23, in __init__
+    summoner_data = self._summoner_data_from_db()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 19, in _summoner_data_from_db
+    summoner_model = SummonerModel.objects.get(summoner_name=self.summoner_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 14, in summoner_info
+    summoner = SummonerData(summoner_name, api_key, region)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\summoner_data.py", line 23, in __init__
+    summoner_data = self._summoner_data_from_db()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 19, in _summoner_data_from_db
+    summoner_model = SummonerModel.objects.get(summoner_name=self.summoner_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
