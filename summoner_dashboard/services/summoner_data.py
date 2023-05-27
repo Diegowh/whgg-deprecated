@@ -5,12 +5,16 @@ from .ranked_data import RankedData
 from .summoner_info import SummonerInfo
 
 
+REGION_DEFAULT = "EUW1"
+BASE_URL_TEMPLATE = "https://{region}.api.riotgames.com/lol/"
+
+
 class SummonerData(SummonerInfo, DatabaseHandler, APIHandler, RankedData, MatchStats):
-    def __init__(self, summoner_name: str, api_key: str, region: str = "EUW1") -> None:
+    def __init__(self, summoner_name: str, api_key: str, region: str = REGION_DEFAULT) -> None:
         self.api_key = api_key
         self.region = region
         self.summoner_name = summoner_name
-        self.base_url = f"https://{region}.api.riotgames.com/lol/"
+        self.base_url = BASE_URL_TEMPLATE.format(region=region)
         
         self._summoner_info = None
         self.id = self.summoner_id()
