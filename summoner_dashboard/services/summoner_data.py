@@ -3,7 +3,7 @@ from .db_handler import DatabaseHandler
 from .match_stats import MatchStats
 from .ranked_data import RankedData
 from .summoner_info import SummonerInfo
-from django.conf import settings
+
 
 
 REGION_DEFAULT = "EUW1"
@@ -12,7 +12,7 @@ BASE_URL_TEMPLATE = "https://{region}.api.riotgames.com/lol/"
 
 class SummonerData(SummonerInfo, DatabaseHandler, APIHandler, RankedData, MatchStats):
     def __init__(self, summoner_name: str, api_key: str, region: str = REGION_DEFAULT) -> None:
-        self.api_key = settings.API_KEY
+        self.api_key = api_key
         self.region = region
         self.summoner_name = summoner_name
         self.base_url = BASE_URL_TEMPLATE.format(region=region)
