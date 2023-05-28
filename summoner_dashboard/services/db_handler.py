@@ -206,3 +206,57 @@ class DatabaseHandler:
             matches_data.append(match_data)
         logger.info("Retrieved all match data.")
         return matches_data
+    
+    
+    
+    def save_matches_data_to_db(self, matches_data: dict) -> None:
+        """
+        Saves match data to the database.
+
+            Args:
+                matches_data: A dict containing match data for each match ID.
+
+            Returns:
+                None.
+        """
+        for match_id, game_data in matches_data.items():
+            match_data = game_data["match_data"]
+            summoner_data = game_data["summoner_data"]
+            participants_data = game_data["participants_data"]
+
+            participant_summoner_names = [p["summoner_name"] for p in participants_data]
+            participant_champion_names = [p["champion_name"] for p in participants_data]
+            participant_team_ids = [p["team_id"] for p in participants_data]
+
+            summoner = SummonerModel.objects.get(summoner_puuid=summoner_data["summoner_puuid"])
+
+            new_match = MatchModel(
+                summoner=summoner,
+                match_id=match_id,
+                champion_name=summoner_data["champion_name"],
+                win=summoner_data["win"],
+                kills=summoner_data["kills"],
+                deaths=summoner_data["deaths"],
+                assists=summoner_data["assists"],
+                kda=summoner_data["kda"],
+                cs=summoner_data["cs"],
+                vision=summoner_data["vision"],
+                summoner_spell1=summoner_data["summoner_spell1"],
+                summoner_spell2=summoner_data["summoner_spell2"],
+                item0=summoner_data["item0"],
+                item1=summoner_data["item1"],
+                item2=summoner_data["item2"],
+                item3=summoner_data["item3"],
+                item4=summoner_data["item4"],
+                item5=summoner_data["item5"],
+                item6=summoner_data["item6"],
+                participant_summoner_names=participant_summoner_names,
+                participant_champion_names=participant_champion_names,
+                participant_team_ids=participant_team_ids,
+                game_mode=match_data["game_mode"],
+                game_duration=match_data["game_duration"],
+                queue_id=match_data["queue_id"],
+                team_position=summoner_data["team_position"]
+            )
+
+            new_match.save()
