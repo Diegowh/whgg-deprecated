@@ -26,6 +26,14 @@ class MatchStats:
         return recent_matches_data
     
     
+    def calculate_kda(self, kills: int, deaths: int, assists: int) -> float:
+        kda = (kills + assists) / (deaths if deaths != 0 else 1)
+        return round(kda, 2)
+
+    def calculate_average(self, value: int, total_games: int) -> float:
+        return round(value / total_games, 1)
+    
+    
     def update_champion_stats(self):
         matches = MatchModel.objects.values(
             'summoner',

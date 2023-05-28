@@ -51,10 +51,9 @@ class DatabaseHandler:
         
         
     def update_summoner_in_db(self, league_data: dict, summoner: SummonerModel) -> None:
-
         current_timestamp = timezone.now()
         
-        if current_timestamp - summoner.last_update >= UPDATE_THRESHOLD:
+        if summoner.last_update is None or current_timestamp - summoner.last_update >= UPDATE_THRESHOLD:
             logger.info("Updating database.")
 
             summoner.summoner_id = self.id
@@ -123,7 +122,7 @@ class DatabaseHandler:
         
 
     def _get_last_match(self):
-        return MatchModel.objects.filter(summoner_puuid=self.puuid).order_by('-match_id').first()
+        return MatchModel.objects.filter(summoner__summoner_puuid=self.puuid).order_by('-match_id').first()
     
     
     def _handle_new_matches(self, last_match):

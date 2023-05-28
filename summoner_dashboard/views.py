@@ -90,7 +90,6 @@ def summoner_info(request, summoner_name):
         'champions_played': champions_played,
         'recent_matches': recent_matches,
         'role_data': role_data,
-        'region': region
     }
     
     

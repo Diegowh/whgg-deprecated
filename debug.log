@@ -514,3 +514,1044 @@ django.db.utils.ProgrammingError: no existe la relación «summoner_dashboard_summ
 LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
                                                              ^
 
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 14, in summoner_info
+    summoner = SummonerData(summoner_name, api_key)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\summoner_data.py", line 23, in __init__
+    summoner_data = self._summoner_data_from_db()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 19, in _summoner_data_from_db
+    summoner_model = SummonerModel.objects.get(summoner_name=self.summoner_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: no existe la relación «summoner_dashboard_summonermodel»
+LINE 1: ...er_dashboard_summonermodel"."summoner_level" FROM "summoner_...
+                                                             ^
+
+Not Found: /favicon.ico
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\whgg_django\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 45, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 45, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /summoners/euw1/
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 45, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 46, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 46, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 45, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «last_update» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+Watching for file changes with StatReloader
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+summoner_dashboard.models.SummonerModel.DoesNotExist: SummonerModel matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: el valor nulo en la columna «profile_icon_id» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 45, in handle_summoner_data
+    summoner, created = SummonerModel.objects.get_or_create(summoner_puuid=self.puuid)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: el valor nulo en la columna «profile_icon_id» de la relación «summoner_dashboard_summonermodel» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxK..., , , , null, Unranked, 0, 0, 0, 0, Unranked, 0, 0, 0, 0, null, null).
+
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Adding a new summoner to the database.
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: llave duplicada viola restricción de unicidad «summoner_dashboard_summonermodel_pkey»
+DETAIL:  Ya existe la llave (summoner_puuid)=(6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxKfhoqWJd-MYSfKA).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 47, in handle_summoner_data
+    self.save_summoner_to_db(league_data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 86, in save_summoner_to_db
+    SummonerModel.objects.create(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: llave duplicada viola restricción de unicidad «summoner_dashboard_summonermodel_pkey»
+DETAIL:  Ya existe la llave (summoner_puuid)=(6YyRU-vSpZW24QMTKcMwcS9GRtJ0Z5ei_1_wTK4Tjd4JgWe8riBYUd9SQ8WjRsxKfhoqWJd-MYSfKA).
+
+Adding a new summoner to the database.
+Internal Server Error: /summoners/euw1/Flan de Nata
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: llave duplicada viola restricción de unicidad «summoner_dashboard_summonermodel_pkey»
+DETAIL:  Ya existe la llave (summoner_puuid)=(ERUb4cfQS5tH-oRi0MUHtAkwmGA5vK6ZTaGrCYPR_hqWY3Qa0wkWi07Gl4QS4pET4Qn_xj6h0jSjLg).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 15, in summoner_info
+    summoner_data = summoner.league_data()
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\ranked_data.py", line 66, in league_data
+    self.handle_summoner_data(data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 47, in handle_summoner_data
+    self.save_summoner_to_db(league_data)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 86, in save_summoner_to_db
+    SummonerModel.objects.create(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1820, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: llave duplicada viola restricción de unicidad «summoner_dashboard_summonermodel_pkey»
+DETAIL:  Ya existe la llave (summoner_puuid)=(ERUb4cfQS5tH-oRi0MUHtAkwmGA5vK6ZTaGrCYPR_hqWY3Qa0wkWi07Gl4QS4pET4Qn_xj6h0jSjLg).
+
+Watching for file changes with StatReloader
+Updating database.
+Internal Server Error: /summoners/euw1/Flan de Nata
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 16, in summoner_info
+    recent_matches_data = summoner.recent_matches_data()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py", line 14, in recent_matches_data
+    matches_data = self._matches_data_from_db()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 109, in _matches_data_from_db
+    last_match = self._get_last_match()
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 125, in _get_last_match
+    return MatchModel.objects.filter(summoner_puuid=self.puuid).order_by('-match_id').first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1502, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1533, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1383, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1193, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1681, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'summoner_puuid' into field. Choices are: assists, champion_name, cs, deaths, game_duration, game_mode, id, item0, item1, item2, item3, item4, item5, item6, kda, kills, match_id, participant_champion_names, participant_summoner_names, participant_team_ids, queue_id, summoner, summoner_id, summoner_spell1, summoner_spell2, team_position, vision, win
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 8, in home
+    return render(request, 'summoner_dashboard/main_page.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'summoner_info' with no arguments not found. 1 pattern(s) tried: ['summoners/euw1/(?P<summoner_name>[^/]+)\\Z']
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 8, in home
+    return render(request, 'summoner_dashboard/main_page.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'summoner_info' with no arguments not found. 1 pattern(s) tried: ['summoners/euw1/(?P<summoner_name>[^/]+)\\Z']
+Watching for file changes with StatReloader
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 8, in home
+    return render(request, 'summoner_dashboard/main_page.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'summoner_info' with no arguments not found. 1 pattern(s) tried: ['summoners/euw1/(?P<summoner_name>[^/]+)\\Z']
+Watching for file changes with StatReloader
+Updating database.
+Adding all matches to the database...
+Internal Server Error: /summoners/euw1/wallhack
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 16, in summoner_info
+    recent_matches_data = summoner.recent_matches_data()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py", line 14, in recent_matches_data
+    matches_data = self._matches_data_from_db()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 115, in _matches_data_from_db
+    self._handle_all_matches()
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 142, in _handle_all_matches
+    all_matches_data = self._matches_data(all_matches)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\api_handler.py", line 123, in _matches_data
+    summoner_data = self._handle_summoner_data(participant)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\api_handler.py", line 68, in _handle_summoner_data
+    "kda": self.calculate_kda(participant["kills"], participant["deaths"], participant["assists"]),
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'SummonerData' object has no attribute 'calculate_kda'
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Adding all matches to the database...
+Internal Server Error: /summoners/euw1/Flan de Nata
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 16, in summoner_info
+    recent_matches_data = summoner.recent_matches_data()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py", line 14, in recent_matches_data
+    matches_data = self._matches_data_from_db()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 115, in _matches_data_from_db
+    self._handle_all_matches()
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\db_handler.py", line 143, in _handle_all_matches
+    self.save_matches_data_to_db(all_matches_data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SummonerData' object has no attribute 'save_matches_data_to_db'

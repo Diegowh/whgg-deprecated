@@ -5,7 +5,7 @@ class SummonerModel(models.Model):
     summoner_id = models.CharField(max_length=200)
     summoner_name = models.CharField(max_length=200)
     region = models.CharField(max_length=200)
-    last_update = models.DateTimeField()
+    last_update = models.DateTimeField(null=True)
     soloq_rank = models.CharField(max_length=200, default='Unranked')
     soloq_lp = models.IntegerField(default=0)
     soloq_wins = models.IntegerField(default=0)
@@ -16,8 +16,8 @@ class SummonerModel(models.Model):
     flex_wins = models.IntegerField(default=0)
     flex_losses = models.IntegerField(default=0)
     flex_wr = models.IntegerField(default=0)
-    profile_icon_id = models.IntegerField()
-    summoner_level = models.IntegerField()
+    profile_icon_id = models.IntegerField(null=True)
+    summoner_level = models.IntegerField(null=True)
 
 
 class ChampionStatsModel(models.Model):
