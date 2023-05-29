@@ -41,11 +41,11 @@ def summoner_info(request, summoner_name):
         {
             "champion_name": champ["champion_name"],
             "cs": champ["cs"],
-            "kda": champ["kda"],
+            "kda": round(champ["kda"], 2),
             "kills": champ["kills"],
             "deaths": champ["deaths"],
             "assists": champ["assists"],
-            "wr": champ["wr"],
+            "wr": round(champ["wr"]),
             "games_played": champ["matches_played"],
         }
         for champ in top_champs_data
