@@ -4,5 +4,5 @@ from summoner_dashboard import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('summoner_dashboard.urls')),
+    path('', include(('summoner_dashboard.urls', 'summoner_dashboard'))),
 ]
