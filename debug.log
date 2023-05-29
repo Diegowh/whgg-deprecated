@@ -1575,3 +1575,86 @@ Traceback (most recent call last):
     return match_data.match_id
            ^^^^^^^^^^^^^^^^^^^
 AttributeError: 'dict' object has no attribute 'match_id'
+Watching for file changes with StatReloader
+Retrieved all match data.
+Internal Server Error: /summoners/euw1/Flan de Nata
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 16, in summoner_info
+    recent_matches_data = summoner.recent_matches_data()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py", line 23, in recent_matches_data
+    matches_data.sort(key=match_id_key, reverse=True)
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py", line 21, in match_id_key
+    return match_data.match_id
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'match_id'
+Not Found: /favicon.ico
+C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\services\match_stats.py changed, reloading.
+Watching for file changes with StatReloader
+Retrieved all match data.
+Internal Server Error: /summoners/euw1/Flan de Nata
+Traceback (most recent call last):
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diego\Desktop\Diego\programacion\Portfolio\whgg_django\summoner_dashboard\views.py", line 96, in summoner_info
+    return render(request, 'summoner_dashboard/summoner_page.html', summoner_profile)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\users\Diego\desktop\Diego\programacion\Portfolio\whgg_django\.venv\Lib\site-packages\django\template\base.py", line 673, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse some characters: |((match.kills + match.assists) / match.deaths if match.deaths > 0 else match.kills + match.assists)||floatformat:2

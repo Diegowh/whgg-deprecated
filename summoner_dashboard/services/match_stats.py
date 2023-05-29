@@ -18,7 +18,7 @@ class MatchStats:
             return []
         
         def match_id_key(match_data):
-            return match_data.match_id
+            return match_data['match_id']
 
         matches_data.sort(key=match_id_key, reverse=True)
         recent_matches_data = matches_data[:RECENT_MATCHES_LIMIT]
