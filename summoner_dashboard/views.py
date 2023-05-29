@@ -17,6 +17,7 @@ def summoner_info(request, summoner_name):
     top_champs_data = summoner.top_champions_data()
     role_data = summoner.role_data()
     
+    
     summoner_data = {
         "summoner_name": summoner_name,
         "profile_icon_id": summoner_data["profile_icon_id"],
@@ -36,7 +37,6 @@ def summoner_info(request, summoner_name):
             "wr": summoner_data["flex_wr"],
         },
     }
-
     champions_played = [
         {
             "champion_name": champ["champion_name"],
