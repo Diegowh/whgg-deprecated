@@ -74,6 +74,7 @@ def summoner_info(request, summoner_name):
             "kills": int(match["kills"]),
             "deaths": int(match["deaths"]),
             "assists": int(match["assists"]),
+            "kda_ratio": round((int(match["kills"]) + int(match["assists"])) / int(match["deaths"]), 2) if int(match["deaths"]) > 0 else round((int(match["kills"]) + int(match["assists"])), 2),
             "cs": match["cs"],
             "vision": match["vision"],
             "participant_summoner_names": [match["participant1_summoner_name"], match["participant2_summoner_name"], match["participant3_summoner_name"], match["participant4_summoner_name"], match["participant5_summoner_name"], match["participant6_summoner_name"], match["participant7_summoner_name"], match["participant8_summoner_name"], match["participant9_summoner_name"], match["participant10_summoner_name"]],

@@ -215,7 +215,7 @@
                       </div>
                       <div class="game-score">
                         <span class="kda">{{ match.kills }} / {{ match.deaths }} / {{ match.assists }}</span>
-                        <span class="kda-ratio">{{ ((match.kills + match.assists) / match.deaths if match.deaths > 0 else match.kills + match.assists)|floatformat:2 }}:1 KDA</span>
+                        <span class="kda-ratio">{{ match.kda_ratio }}:1 KDA</span>
                         <span class="cs cs-center">{{ match.cs }} CS</span>
                       </div>
                       <div class="game-items">
@@ -227,7 +227,11 @@
                           </div>
                         {% endfor %}
                       </div>
-                      <span class="game-result{% if not match.win %} defeat{% endif %}">{{ 'Victory' if match.win else 'Defeat' }}</span>
+                      {% if match.win %}
+                          <span class="game-result">Victory</span>
+                      {% else %}
+                          <span class="game-result defeat">Defeat</span>
+                      {% endif %}
                     </div>
                     <div class="card-header justify-content-center">
                       <div class="participant-column">
